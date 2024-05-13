@@ -1,0 +1,4 @@
+.container
+  h1 = 'Редактирование пользователя'
+  == render partial: 'users/form', locals: { user: @user }
+  = link_to 'Назад', :back, class: 'm-2'

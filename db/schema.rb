@@ -32,5 +32,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_13_191325) do
     t.index ["sack_id"], name: "index_users_on_sack_id"
   end
 
-  add_foreign_key "users", "sacks"
 end
