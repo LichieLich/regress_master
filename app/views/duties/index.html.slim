@@ -1,1 +1,15 @@
-h1 Dashboard
+.container
+  h1 Календарь регресс мастеров
+  br
+  = week_calendar(events: @duties, attribute: :date, number_of_weeks: 2) do |date, duties|
+    .card-deck
+      .row.mt-2
+        - duties.each do |duty|
+          .col-2.pt-2.w-100
+            .card.shadow-sm.h-100 class = (duty.date.today? ? 'bg-primary text-white' : 'bg-light')
+              .card-header
+                = duty.date.strftime('%d.%m.%y')
+              .card-body
+                = duty.user&.name
+
+  = link_to 'На главную', :root, class: 'm-2'

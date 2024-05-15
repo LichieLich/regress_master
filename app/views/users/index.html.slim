@@ -2,18 +2,18 @@
   h1 Users
   = link_to 'Создать пользователя', new_user_path, class: 'button'
   br
-   table.table.table-hover.mb-5
-        thead
+  table.table.table-hover.mb-5
+      thead
+        tr
+          th = 'Имя'
+          th = 'Дейсвтия'
+      tbody
+        - @users.each do |user|
           tr
-            th = 'Имя'
-            th = 'Дейсвтия'
-        tbody
-          - @users.each do |user|
-            tr
-              td = user.name
-              td.d-flex
-                .me-1 = link_to 'Редактировать', edit_user_path(user)
-                .me-1.text-danger = button_to 'Удалить', user_path(user),
-                  method: :delete, data: { confirm: 'Точно удалить?' }, class: 'link'
+            td = user.name
+            td.d-flex
+              .me-1 = link_to 'Редактировать', edit_user_path(user)
+              .me-1.text-danger = button_to 'Удалить', user_path(user),
+                method: :delete, data: { confirm: 'Точно удалить?' }, class: 'link'
   br
   = link_to 'На главную', :root, class: 'm-2'

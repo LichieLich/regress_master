@@ -49,6 +49,9 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'faker'
+gem 'rest-client'
+gem "simple_calendar"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
